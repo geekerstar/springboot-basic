@@ -1,0 +1,56 @@
+# 换行
+string: "I am a coder.\n\
+         My blog is geekerstar.com."
+
+# |：文中自动换行 + 文末新增一空行
+string1: |
+  I am a coder.
+  My blog is geekerstar.com.
+
+# |+：文中自动换行 + 文末新增两空行
+string2: |+
+  I am a coder.
+  My blog is geekerstar.com.
+
+# |-：文中自动换行 + 文末不新增行
+string3: |-
+  I am a coder.
+  My blog is geekerstar.com.
+
+# >：文中不自动换行 + 文末新增一空行
+string11: >
+  I am a coder.
+  My blog is geekerstar.com.
+
+# >+：文中不自动换行 + 文末新增两空行
+string22: >+
+  I am a coder.
+  My blog is geekerstar.com.
+
+# >-：文中不自动换行 + 文末不新增行
+string33: >-
+  I am a coder.
+  My blog is geekerstar.com.
+
+#  !!int               # 整数类型
+#  !!float             # 浮点类型
+#  !!bool              # 布尔类型
+#  !!str               # 字符串类型
+#  !!binary            # 也是字符串类型
+#  !!timestamp         # 日期时间类型
+#  !!null              # 空值
+#  !!set               # 集合
+#  !!omap, !!pairs     # 键值列表或对象列表
+#  !!seq               # 序列，也是列表
+#  !!map               # 键值表
+
+
+
+
+
+
+
+
+
+
+
