@@ -13,9 +13,9 @@ public class DatabaseTest extends BasicApplicationTests {
 
     @Test
     public void getPass() {
-        String url = encryptor.encrypt("jdbc:mysql://1.14.103.90:13306/basic?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false");
-        String name = encryptor.encrypt("root");
-        String password = encryptor.encrypt("geekerstar");
+        String url = encryptor.encrypt("");
+        String name = encryptor.encrypt("");
+        String password = encryptor.encrypt("");
         System.out.println("database url: " + url);
         System.out.println("database name: " + name);
         System.out.println("database password: " + password);
