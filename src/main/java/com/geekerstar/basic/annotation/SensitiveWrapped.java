@@ -19,6 +19,7 @@ public @interface SensitiveWrapped {
 
     /**
      * 脱敏类型
+     *
      * @return
      */
     SensitiveEnum value();

@@ -223,6 +223,13 @@
             <version>1.7.4</version>
         </dependency>
 
+<!--        neo4j开始-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-neo4j</artifactId>
+        </dependency>
+<!--        neo4j结束-->
+
     </dependencies>
 
     <dependencyManagement>

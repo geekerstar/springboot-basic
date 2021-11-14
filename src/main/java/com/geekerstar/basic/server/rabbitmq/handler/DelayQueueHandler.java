@@ -1,4 +1,4 @@
-package com.geekerstar.basic.rabbitmq;
+package com.geekerstar.basic.server.rabbitmq.handler;
 
 import cn.hutool.json.JSONUtil;
 import com.geekerstar.basic.constant.RabbitmqConstant;

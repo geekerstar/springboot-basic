@@ -1,4 +1,4 @@
-package com.geekerstar.basic.listener;
+package com.geekerstar.basic.server.redis.listener;
 
 import org.springframework.data.redis.connection.Message;
 import org.springframework.data.redis.listener.KeyExpirationEventMessageListener;
@@ -19,6 +19,7 @@ public class RedisKeyExpirationListener extends KeyExpirationEventMessageListene
 
     /**
      * 针对 redis 数据失效事件，进行数据处理
+     *
      * @param message
      * @param pattern
      */

@@ -4,7 +4,10 @@ import com.geekerstar.basic.domain.common.Response;
 import com.geekerstar.basic.domain.dto.OssUploadVO;
 import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import com.github.xiaoymin.knife4j.annotations.ApiSupport;
-import io.swagger.annotations.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
@@ -20,12 +23,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/swagger")
 @Api(tags = "Swagger测试")
 @RequiredArgsConstructor
-@ApiSupport(author = "Geekerstar.com",order = 284)
+@ApiSupport(author = "Geekerstar.com", order = 284)
 public class SwaggerController {
 
     @GetMapping("/get")
     @ApiOperation(value = "普通GET请求", notes = "")
-    @ApiOperationSupport(author = "Geekerstar",order = 33)
+    @ApiOperationSupport(author = "Geekerstar", order = 33)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "type", value = "码值类型", paramType = "query", required = true)
     })

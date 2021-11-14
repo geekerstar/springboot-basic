@@ -83,7 +83,8 @@ public class SensitiveSerialize extends JsonSerializer<String> implements Contex
         return serializerProvider.findNullValueSerializer(beanProperty);
     }
 
-    public SensitiveSerialize() {}
+    public SensitiveSerialize() {
+    }
 
     public SensitiveSerialize(final SensitiveEnum type) {
         this.type = type;

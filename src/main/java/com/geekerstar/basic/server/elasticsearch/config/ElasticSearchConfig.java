@@ -1,4 +1,4 @@
-package com.geekerstar.basic.config;
+package com.geekerstar.basic.server.elasticsearch.config;
 
 import lombok.Data;
 import org.apache.http.HttpHost;

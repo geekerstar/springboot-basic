@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2WebMvc
-@Profile({"dev","prod"})
+@Profile({"dev", "prod"})
 public class SwaggerConfig {
 
     @Bean
@@ -31,6 +31,19 @@ public class SwaggerConfig {
                 .groupName("1000.所有接口")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.geekerstar.basic.controller"))
+                .paths(PathSelectors.any())
+                .build()
+                .securityContexts(Lists.newArrayList(securityContext()))
+                .securitySchemes(Lists.<SecurityScheme>newArrayList(token(), appId()))
+                .apiInfo(apiInfo());
+    }
+
+    @Bean
+    public Docket neo4jApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("1100.neo4j")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.geekerstar.basic.server.neo4j.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .securityContexts(Lists.newArrayList(securityContext()))

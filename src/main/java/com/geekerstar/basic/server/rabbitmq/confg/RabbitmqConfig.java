@@ -1,4 +1,4 @@
-package com.geekerstar.basic.config;
+package com.geekerstar.basic.server.rabbitmq.confg;
 
 import com.geekerstar.basic.constant.RabbitmqConstant;
 import com.google.common.collect.Maps;
