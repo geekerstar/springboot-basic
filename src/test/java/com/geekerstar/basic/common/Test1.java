@@ -4,12 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.geekerstar.basic.domain.entity.User;
-import com.geekerstar.basic.domain.entity.json.JsonTest;
+import com.geekerstar.basic.module.back.domain.entity.User;
+import com.geekerstar.basic.module.back.domain.entity.json.JsonTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
-import static net.sf.jsqlparser.util.validation.metadata.NamedObject.user;
 
 /**
  * @author geekerstar

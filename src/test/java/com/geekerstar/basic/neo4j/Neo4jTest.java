@@ -1,8 +1,8 @@
 package com.geekerstar.basic.neo4j;
 
 import com.geekerstar.basic.BasicApplicationTests;
-import com.geekerstar.basic.server.neo4j.domain.entity.Neo4jPerson;
-import com.geekerstar.basic.server.neo4j.service.Neo4jPersonService;
+import com.geekerstar.basic.module.neo4j.domain.entity.Neo4jPerson;
+import com.geekerstar.basic.module.neo4j.service.Neo4jPersonService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

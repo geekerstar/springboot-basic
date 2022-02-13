@@ -38,7 +38,7 @@ public class AopLogAspect {
     /**
      * 切入点
      */
-    @Pointcut("execution(public * com.geekerstar.basic.controller.*Controller.*(..))")
+    @Pointcut("execution(public * com.geekerstar.basic.module.back.controller.*Controller.*(..))")
     public void log() {
 
     }

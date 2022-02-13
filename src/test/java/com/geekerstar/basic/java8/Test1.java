@@ -1,6 +1,6 @@
 package com.geekerstar.basic.java8;
 
-import com.geekerstar.basic.domain.entity.Account;
+import com.geekerstar.basic.module.back.domain.entity.Account;
 import org.junit.Test;
 
 import java.util.*;

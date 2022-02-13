@@ -211,6 +211,7 @@
             <version>3.16.1</version>
         </dependency>
 
+<!--        加密-->
         <dependency>
             <groupId>com.github.ulisesbocchio</groupId>
             <artifactId>jasypt-spring-boot-starter</artifactId>
@@ -230,6 +231,11 @@
         </dependency>
 <!--        neo4j结束-->
 
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>9.15.2</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

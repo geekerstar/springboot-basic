@@ -1,8 +1,8 @@
 package com.geekerstar.basic.redis;
 
 import com.geekerstar.basic.BasicApplicationTests;
-import com.geekerstar.basic.domain.entity.User;
-import com.geekerstar.basic.service.UserService;
+import com.geekerstar.basic.module.back.domain.entity.User;
+import com.geekerstar.basic.module.back.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.geekerstar.basic.common;
 
-import com.geekerstar.basic.domain.entity.User;
+import com.geekerstar.basic.module.back.domain.entity.User;
 
 /**
  * @author geekerstar

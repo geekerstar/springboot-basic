@@ -1,6 +1,6 @@
 package com.geekerstar.basic.exception;
 
-import com.geekerstar.basic.domain.common.Response;
+import com.geekerstar.basic.module.back.domain.common.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

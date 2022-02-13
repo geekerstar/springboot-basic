@@ -5,8 +5,8 @@ import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONUtil;
 import com.geekerstar.basic.BasicApplicationTests;
-import com.geekerstar.basic.domain.entity.Article;
-import com.geekerstar.basic.mapper.ArticleRepository;
+import com.geekerstar.basic.module.back.domain.entity.Article;
+import com.geekerstar.basic.module.mongodb.repository.MongodbArticleRepository;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 public class MongodbTest extends BasicApplicationTests {
 
     @Autowired
-    private ArticleRepository articleRepo;
+    private MongodbArticleRepository articleRepo;
 
     @Autowired
     private MongoTemplate mongoTemplate;

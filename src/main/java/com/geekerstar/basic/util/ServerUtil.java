@@ -1,8 +1,8 @@
 package com.geekerstar.basic.util;
 
 import cn.hutool.core.lang.Dict;
-import com.geekerstar.basic.domain.entity.Server;
-import com.geekerstar.basic.domain.vo.ServerVO;
+import com.geekerstar.basic.module.back.domain.entity.Server;
+import com.geekerstar.basic.module.back.domain.vo.ServerVO;
 
 /**
  * @author geekerstar
