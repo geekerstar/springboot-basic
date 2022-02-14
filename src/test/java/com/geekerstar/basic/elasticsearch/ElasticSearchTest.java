@@ -1,7 +1,7 @@
 package com.geekerstar.basic.elasticsearch;
 
 import com.geekerstar.basic.BasicApplicationTests;
-import com.geekerstar.basic.module.back.domain.entity.Product;
+import com.geekerstar.basic.module.elasticsearch.domain.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.junit.Test;

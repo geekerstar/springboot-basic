@@ -1,7 +1,6 @@
 package com.geekerstar.basic.module.neo4j.domain.entity;
 
 
-import com.geekerstar.basic.module.back.domain.entity.Person;
 import lombok.Data;
 import org.springframework.data.neo4j.core.schema.*;
 

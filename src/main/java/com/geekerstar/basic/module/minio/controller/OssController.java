@@ -2,9 +2,9 @@ package com.geekerstar.basic.module.minio.controller;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.json.JSONUtil;
-import com.geekerstar.basic.module.back.domain.common.Response;
-import com.geekerstar.basic.module.back.domain.dto.OssBucketPolicyConfigDTO;
-import com.geekerstar.basic.module.back.domain.dto.OssUploadVO;
+import com.geekerstar.basic.util.Response;
+import com.geekerstar.basic.module.minio.domain.dto.OssBucketPolicyConfigDTO;
+import com.geekerstar.basic.module.minio.domain.dto.OssUploadVO;
 import com.github.xiaoymin.knife4j.annotations.ApiSupport;
 import io.minio.*;
 import io.swagger.annotations.Api;

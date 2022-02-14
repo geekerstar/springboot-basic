@@ -5,7 +5,7 @@ import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONUtil;
 import com.geekerstar.basic.BasicApplicationTests;
-import com.geekerstar.basic.module.back.domain.entity.Article;
+import com.geekerstar.basic.module.mongodb.domain.entity.Article;
 import com.geekerstar.basic.module.mongodb.repository.MongodbArticleRepository;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;

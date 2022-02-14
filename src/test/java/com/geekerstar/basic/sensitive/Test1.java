@@ -2,7 +2,7 @@ package com.geekerstar.basic.sensitive;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.geekerstar.basic.module.back.domain.entity.SensitiveUser;
+import com.geekerstar.basic.module.sensitive.domain.entity.SensitiveUser;
 import org.junit.Test;
 
 /**

@@ -1,7 +1,7 @@
 package com.geekerstar.basic.java8;
 
 import com.alibaba.fastjson.JSON;
-import com.geekerstar.basic.module.back.domain.entity.Menu;
+import com.geekerstar.basic.module.java8.Menu;
 import org.junit.Test;
 
 import java.util.Arrays;

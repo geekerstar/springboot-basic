@@ -1,6 +1,6 @@
 package com.geekerstar.basic.module.mongodb.repository;
 
-import com.geekerstar.basic.module.back.domain.entity.Article;
+import com.geekerstar.basic.module.mongodb.domain.entity.Article;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
