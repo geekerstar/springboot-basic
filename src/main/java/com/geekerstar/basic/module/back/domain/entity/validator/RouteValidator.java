@@ -1,7 +1,7 @@
 package com.geekerstar.basic.module.back.domain.entity.validator;
 
-import com.geekerstar.basic.common.validator.ValidateGroup.RouteValidEnd;
-import com.geekerstar.basic.common.validator.ValidateGroup.RouteValidStart;
+import com.geekerstar.basic.module.validation.validator.ValidateGroup.RouteValidEnd;
+import com.geekerstar.basic.module.validation.validator.ValidateGroup.RouteValidStart;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

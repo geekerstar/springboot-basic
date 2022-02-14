@@ -1,6 +1,6 @@
-package com.geekerstar.basic.annotation;
+package com.geekerstar.basic.module.validation.annotation;
 
-import com.geekerstar.basic.common.validator.SexValidator;
+import com.geekerstar.basic.module.validation.validator.SexValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

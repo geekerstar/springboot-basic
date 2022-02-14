@@ -1,8 +1,8 @@
 package com.geekerstar.basic.module.back.controller;
 
 import cn.hutool.core.lang.Dict;
-import com.geekerstar.basic.annotation.GuavaRateLimiter;
-import com.geekerstar.basic.annotation.RedisRateLimiter;
+import com.geekerstar.basic.module.limiter.annotation.GuavaRateLimiter;
+import com.geekerstar.basic.module.limiter.annotation.RedisRateLimiter;
 import com.github.xiaoymin.knife4j.annotations.ApiSupport;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

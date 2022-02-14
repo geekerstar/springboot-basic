@@ -1,7 +1,7 @@
-package com.geekerstar.basic.aspect;
+package com.geekerstar.basic.module.limiter.aspect;
 
 import cn.hutool.core.util.StrUtil;
-import com.geekerstar.basic.annotation.RedisRateLimiter;
+import com.geekerstar.basic.module.limiter.annotation.RedisRateLimiter;
 import com.geekerstar.basic.exception.CommonException;
 import com.geekerstar.basic.util.IpUtil;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +37,7 @@ public class RedisRateLimiterAspect {
     private final StringRedisTemplate stringRedisTemplate;
     private final RedisScript<Long> limitRedisScript;
 
-    @Pointcut("@annotation(com.geekerstar.basic.annotation.RedisRateLimiter)")
+    @Pointcut("@annotation(com.geekerstar.basic.module.limiter.annotation.RedisRateLimiter)")
     public void rateLimit() {
 
     }

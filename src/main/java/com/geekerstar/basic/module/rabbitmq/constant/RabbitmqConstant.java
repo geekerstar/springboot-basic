@@ -1,4 +1,4 @@
-package com.geekerstar.basic.constant;
+package com.geekerstar.basic.module.rabbitmq.constant;
 
 /**
  * @author geekerstar

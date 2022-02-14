@@ -1,7 +1,7 @@
 package com.geekerstar.basic.module.back.domain.entity;
 
-import com.geekerstar.basic.annotation.SensitiveWrapped;
-import com.geekerstar.basic.constant.SensitiveEnum;
+import com.geekerstar.basic.module.sensitive.annotation.SensitiveWrapped;
+import com.geekerstar.basic.module.sensitive.enums.SensitiveEnum;
 import lombok.Data;
 
 /**

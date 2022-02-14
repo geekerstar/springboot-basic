@@ -1,4 +1,4 @@
-package com.geekerstar.basic.common.validator;
+package com.geekerstar.basic.module.validation.validator;
 
 import javax.validation.groups.Default;
 

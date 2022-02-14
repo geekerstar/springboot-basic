@@ -1,6 +1,6 @@
 package com.geekerstar.basic.module.rabbitmq.confg;
 
-import com.geekerstar.basic.constant.RabbitmqConstant;
+import com.geekerstar.basic.module.rabbitmq.constant.RabbitmqConstant;
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.*;

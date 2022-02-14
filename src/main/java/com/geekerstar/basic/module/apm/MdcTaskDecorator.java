@@ -1,4 +1,4 @@
-package com.geekerstar.basic.apm;
+package com.geekerstar.basic.module.apm;
 
 import org.slf4j.MDC;
 import org.springframework.core.task.TaskDecorator;

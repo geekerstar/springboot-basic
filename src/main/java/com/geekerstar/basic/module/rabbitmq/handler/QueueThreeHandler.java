@@ -1,7 +1,7 @@
 package com.geekerstar.basic.module.rabbitmq.handler;
 
 import cn.hutool.json.JSONUtil;
-import com.geekerstar.basic.constant.RabbitmqConstant;
+import com.geekerstar.basic.module.rabbitmq.constant.RabbitmqConstant;
 import com.geekerstar.basic.module.back.domain.entity.MessageStruct;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.geekerstar.basic.annotation;
+package com.geekerstar.basic.module.limiter.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.core.annotation.AnnotationUtils;

@@ -1,4 +1,4 @@
-package com.geekerstar.basic.aspect;
+package com.geekerstar.basic.module.log.aspect;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.json.JSONUtil;

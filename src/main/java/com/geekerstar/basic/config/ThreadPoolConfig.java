@@ -1,6 +1,6 @@
 package com.geekerstar.basic.config;
 
-import com.geekerstar.basic.apm.MdcTaskDecorator;
+import com.geekerstar.basic.module.apm.MdcTaskDecorator;
 import com.geekerstar.basic.constant.CommonConstant;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;

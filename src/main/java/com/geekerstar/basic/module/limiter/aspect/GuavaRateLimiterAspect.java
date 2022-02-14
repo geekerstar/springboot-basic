@@ -1,6 +1,6 @@
-package com.geekerstar.basic.aspect;
+package com.geekerstar.basic.module.limiter.aspect;
 
-import com.geekerstar.basic.annotation.GuavaRateLimiter;
+import com.geekerstar.basic.module.limiter.annotation.GuavaRateLimiter;
 import com.geekerstar.basic.exception.CommonException;
 import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentMap;
 public class GuavaRateLimiterAspect {
     private static final ConcurrentMap<String, RateLimiter> RATE_LIMITER_CACHE = new ConcurrentHashMap<>();
 
-    @Pointcut("@annotation(com.geekerstar.basic.annotation.GuavaRateLimiter)")
+    @Pointcut("@annotation(com.geekerstar.basic.module.limiter.annotation.GuavaRateLimiter)")
     public void rateLimit() {
 
     }

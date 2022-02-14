@@ -1,4 +1,4 @@
-package com.geekerstar.basic.common;
+package com.geekerstar.basic.module.sensitive.serializer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.BeanProperty;
@@ -6,8 +6,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.ContextualSerializer;
-import com.geekerstar.basic.annotation.SensitiveWrapped;
-import com.geekerstar.basic.constant.SensitiveEnum;
+import com.geekerstar.basic.module.sensitive.annotation.SensitiveWrapped;
+import com.geekerstar.basic.module.sensitive.enums.SensitiveEnum;
 import com.geekerstar.basic.util.SensitiveInfoUtils;
 
 import java.io.IOException;

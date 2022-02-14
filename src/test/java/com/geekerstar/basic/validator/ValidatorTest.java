@@ -1,6 +1,6 @@
 package com.geekerstar.basic.validator;
 
-import com.geekerstar.basic.common.validator.ValidateGroup;
+import com.geekerstar.basic.module.validation.validator.ValidateGroup;
 import com.geekerstar.basic.module.back.domain.entity.validator.RouteValidator;
 import com.geekerstar.basic.util.CommonUtil;
 import org.junit.jupiter.api.Test;

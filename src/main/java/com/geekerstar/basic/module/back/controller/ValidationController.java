@@ -1,6 +1,6 @@
 package com.geekerstar.basic.module.back.controller;
 
-import com.geekerstar.basic.common.validator.ValidationList;
+import com.geekerstar.basic.module.validation.validator.ValidationList;
 import com.geekerstar.basic.module.back.domain.common.Response;
 import com.geekerstar.basic.module.back.domain.dto.ValidationDTO;
 import com.geekerstar.basic.module.back.domain.entity.User;

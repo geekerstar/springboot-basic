@@ -1,4 +1,4 @@
-package com.geekerstar.basic.apm;
+package com.geekerstar.basic.module.apm;
 
 import cn.hutool.core.util.IdUtil;
 import org.apache.commons.lang3.StringUtils;

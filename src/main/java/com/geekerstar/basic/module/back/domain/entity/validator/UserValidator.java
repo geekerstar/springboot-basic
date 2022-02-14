@@ -1,6 +1,6 @@
 package com.geekerstar.basic.module.back.domain.entity.validator;
 
-import com.geekerstar.basic.annotation.Sex;
+import com.geekerstar.basic.module.validation.annotation.Sex;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

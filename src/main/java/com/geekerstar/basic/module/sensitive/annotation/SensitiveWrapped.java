@@ -1,9 +1,9 @@
-package com.geekerstar.basic.annotation;
+package com.geekerstar.basic.module.sensitive.annotation;
 
 import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.geekerstar.basic.common.SensitiveSerialize;
-import com.geekerstar.basic.constant.SensitiveEnum;
+import com.geekerstar.basic.module.sensitive.serializer.SensitiveSerialize;
+import com.geekerstar.basic.module.sensitive.enums.SensitiveEnum;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
