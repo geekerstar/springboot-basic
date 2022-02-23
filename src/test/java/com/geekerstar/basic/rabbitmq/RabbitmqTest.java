@@ -3,7 +3,7 @@ package com.geekerstar.basic.rabbitmq;
 import cn.hutool.core.date.DateUtil;
 import com.geekerstar.basic.BasicApplicationTests;
 import com.geekerstar.basic.module.rabbitmq.constant.RabbitmqConstant;
-import com.geekerstar.basic.module.back.domain.entity.MessageStruct;
+import com.geekerstar.basic.module.rabbitmq.domain.MessageStruct;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
