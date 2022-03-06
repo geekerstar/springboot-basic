@@ -1,7 +1,6 @@
-package com.geekerstar.basic.java8;
+package com.geekerstar.basic.java8.tree;
 
-import com.alibaba.fastjson.JSON;
-import com.geekerstar.basic.module.java8.Menu;
+import cn.hutool.json.JSONUtil;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -11,9 +10,11 @@ import java.util.stream.Collectors;
 
 /**
  * @author geekerstar
- * @date 2021/10/22 14:24
+ * @date 2022/3/5 11:38
+ *
+ * https://mp.weixin.qq.com/s?__biz=MzU1Nzg4NjgyMw==&mid=2247483974&idx=1&sn=d80567d84cb5186d8f5c349e83a38ef4&chksm=fc2fbe4ecb58375843fa0cc1841d4f3287908b93f2e757fb079215cae67e22af13565639aae0&mpshare=1&scene=1&srcid=&sharer_sharetime=1567399972668&sharer_shareid=535c00d0d7095600f2fcdf96cc5a31ba#rd
  */
-public class MenuTreeTest {
+public class TreeTest {
 
     @Test
     public void testTree() {
@@ -36,10 +37,10 @@ public class MenuTreeTest {
         //获取父节点
         List<Menu> collect = menus.stream()
                 .filter(m -> m.getParentId() == 0)
-                .peek((m) -> m.setChildList(getChildren(m, menus)))
+                .peek((m) -> m.setChildList(getChildrenList(m, menus)))
                 .collect(Collectors.toList());
         System.out.println("-------转json输出结果-------");
-        System.out.println(JSON.toJSON(collect));
+        System.out.println(JSONUtil.toJsonStr(collect));
     }
 
     /**
@@ -49,10 +50,10 @@ public class MenuTreeTest {
      * @param all  所有节点
      * @return 根节点信息
      */
-    private List<Menu> getChildren(Menu root, List<Menu> all) {
+    private List<Menu> getChildrenList(Menu root, List<Menu> all) {
         return all.stream()
                 .filter(m -> Objects.equals(m.getParentId(), root.getId()))
-                .peek((m) -> m.setChildList(getChildren(m, all)))
+                .peek((m) -> m.setChildList(getChildrenList(m, all)))
                 .collect(Collectors.toList());
     }
 }
