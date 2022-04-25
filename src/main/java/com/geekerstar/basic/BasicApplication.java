@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @date 2021/8/14 18:03
  * @description
  */
+@EnableRetry
 @EnableAsync
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
 public class BasicApplication {

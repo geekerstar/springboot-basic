@@ -130,7 +130,7 @@ public class RabbitmqConfig {
     }
 
     /**
-     * 延迟队列
+     * 延迟队列 https://www.iocoder.cn/Fight/RabbitMQ-delay-queue-so-useful/
      */
     @Bean
     public Queue delayQueue() {
