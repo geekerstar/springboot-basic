@@ -63,4 +63,26 @@ public class Fun1 {
                 })).values().stream().collect(Collectors.toList());
         return result;
     }
+
+    @Test
+    public void testMapToInt() {
+        List<String> list = new ArrayList<String>() {{
+            add("1");
+            add("2");
+            add("3");
+        }};
+        list.stream()
+                .mapToInt(Integer::valueOf)
+                // 一定要有 mapToObj，因为 mapToInt 返回的是 IntStream，因为已经确定是 int 类型了
+                // 所有没有泛型的，而 Collectors.toList() 强制要求有泛型的流，所以需要使用 mapToObj
+                // 方法返回有泛型的流
+                .mapToObj(s->s)
+                .collect(Collectors.toList());
+
+
+        list.stream()
+                .mapToDouble(Double::valueOf)
+                // DoubleStream/IntStream 有许多 sum（求和）、min（求最小值）、max（求最大值）、average（求平均值）等方法
+                .sum();
+    }
 }
