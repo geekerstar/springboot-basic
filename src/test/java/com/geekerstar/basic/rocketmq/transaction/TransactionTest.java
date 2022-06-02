@@ -27,13 +27,13 @@ public class TransactionTest {
         // 定义一个pull消费者
         // DefaultLitePullConsumer consumer = new DefaultLitePullConsumer("cg");
         // 定义一个push消费者
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("cg");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("geek-transaction-consumer");
         // 指定nameServer
         consumer.setNamesrvAddr(mqUrl);
         // 指定从第一条消息开始消费
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         // 指定消费topic与tag
-        consumer.subscribe("TTopic", "*");
+        consumer.subscribe("geek-transaction-topic", "*");
         // 指定采用“广播模式”进行消费，默认为“集群模式”
         // consumer.setMessageModel(MessageModel.BROADCASTING);
 
@@ -42,10 +42,10 @@ public class TransactionTest {
             // 一旦broker中有了其订阅的消息就会触发该方法的执行，
             // 其返回值为当前consumer消费的状态
             @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> messageExtList, ConsumeConcurrentlyContext context) {
                 // 逐条消费消息
-                for (MessageExt msg : msgs) {
-                    System.out.println(msg);
+                for (MessageExt messageExt : messageExtList) {
+                    System.out.println(messageExt);
                 }
                 // 返回消费状态：消费成功
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
@@ -58,7 +58,7 @@ public class TransactionTest {
 
     @Test
     public void transactionProducer() throws MQClientException {
-        TransactionMQProducer producer = new TransactionMQProducer("tpg");
+        TransactionMQProducer producer = new TransactionMQProducer("geek-transaction-transactionProducer");
         producer.setNamesrvAddr(mqUrl);
 
         /**
@@ -87,13 +87,14 @@ public class TransactionTest {
         producer.setTransactionListener(new ICBCTransactionListener());
         producer.start();
 
-        String[] tags = {"TAGA","TAGB","TAGC"};
+        String[] tags = {"TAGA", "TAGB", "TAGC"};
         for (int i = 0; i < 3; i++) {
-            byte[] body = ("Hi," + i).getBytes();
-            Message msg = new Message("TTopic", tags[i], body);
+            String msg = "事务消息发送，生产者发送消息：" + i;
+            byte[] body = msg.getBytes();
+            Message message = new Message("geek-transaction-topic", tags[i], body);
             // 发送事务消息
             // 第二个参数用于指定在执行本地事务时要使用的业务参数
-            SendResult sendResult = producer.sendMessageInTransaction(msg,null);
+            SendResult sendResult = producer.sendMessageInTransaction(message, null);
             System.out.println("发送结果为：" + sendResult.getSendStatus());
         }
     }
