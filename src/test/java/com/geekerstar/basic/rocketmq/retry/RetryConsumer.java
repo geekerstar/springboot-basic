@@ -19,14 +19,14 @@ public class RetryConsumer {
     private static final String mqUrl = "139.155.88.184:9876";
 
     public static void main(String[] args) throws MQClientException {
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("cg");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("geek-retry-consumer");
         consumer.setNamesrvAddr(mqUrl);
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-        consumer.subscribe("someTopic", "*");
+        consumer.subscribe("geek-retry-topic", "*");
         consumer.registerMessageListener(new MessageListenerConcurrently() {
 
             @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> messageExtList,
                                                             ConsumeConcurrentlyContext context) {
                 try {
                     // ....
