@@ -16,7 +16,7 @@ import java.util.Map;
  */
 public class MessageListSplitter implements Iterator<List<Message>> {
     // 指定极限值为4M
-    private final int SIZE_LIMIT =  4 *1024 * 1024;
+    private static final int SIZE_LIMIT =  4 *1024 * 1024;
     // 存放所有要发送的消息
     private final List<Message> messages;
     // 要进行批量发送消息的小集合起始索引
