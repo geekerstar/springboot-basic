@@ -30,13 +30,13 @@ public class RetryTest {
         // 定义一个pull消费者
         // DefaultLitePullConsumer consumer = new DefaultLitePullConsumer("cg");
         // 定义一个push消费者
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("cg");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("geek-retry-consumer");
         // 指定nameServer
         consumer.setNamesrvAddr(mqUrl);
         // 指定从第一条消息开始消费
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         // 指定消费topic与tag
-        consumer.subscribe("someTopic", "*");
+        consumer.subscribe("geek-retry-topic", "*");
         // 指定采用“广播模式”进行消费，默认为“集群模式”
         // consumer.setMessageModel(MessageModel.BROADCASTING);
         // 顺序消息消费失败的消费重试时间间隔，默认为1000毫秒，其取值范围为[10, 30000]毫秒
@@ -48,10 +48,10 @@ public class RetryTest {
             // 一旦broker中有了其订阅的消息就会触发该方法的执行，
             // 其返回值为当前consumer消费的状态
             @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> messageExtList, ConsumeConcurrentlyContext context) {
                 // 逐条消费消息
-                for (MessageExt msg : msgs) {
-                    System.out.println(msg);
+                for (MessageExt messageExt : messageExtList) {
+                    System.out.println(messageExt + "\n" + new String(messageExt.getBody()));
                 }
                 // 返回消费状态：消费成功
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
@@ -63,9 +63,9 @@ public class RetryTest {
     }
 
     @Test
-    public void syncProducer() throws MQClientException, MQBrokerException, RemotingException, InterruptedException {
+    public void retrySyncProducer() throws MQClientException, MQBrokerException, RemotingException, InterruptedException {
         // 创建一个producer，参数为Producer Group名称
-        DefaultMQProducer producer = new DefaultMQProducer("pg");
+        DefaultMQProducer producer = new DefaultMQProducer("geek-retry-retrySyncProducer");
         // 指定nameServer地址
         producer.setNamesrvAddr(mqUrl);
         // 设置同步发送失败时重试发送的次数，默认为2次
@@ -74,14 +74,15 @@ public class RetryTest {
         producer.setSendMsgTimeout(5000);
         // 开启生产者
         producer.start();
-        // 生产并发送100条消息
-        for (int i = 0; i < 100; i++) {
-            byte[] body = ("Hi," + i).getBytes();
-            Message msg = new Message("someTopic", "someTag", body);
+        // 生产并发送10条消息
+        for (int i = 0; i < 10; i++) {
+            String msg = "重试同步消息发送，生产者发送消息：" + i;
+            byte[] body = msg.getBytes();
+            Message message = new Message("geek-retry-topic", "retrySyncProducer", body);
             // 为消息指定key
-            msg.setKeys("key-" + i);
+            message.setKeys("key-" + i);
             // 同步发送消息
-            SendResult sendResult = producer.send(msg);
+            SendResult sendResult = producer.send(message);
             System.out.println(sendResult);
         }
         // 关闭producer
@@ -89,25 +90,27 @@ public class RetryTest {
     }
 
     @Test
-    public void asyncProducer() throws InterruptedException, MQClientException {
-        DefaultMQProducer producer = new DefaultMQProducer("pg");
+    public void retryAsyncProducer() throws InterruptedException, MQClientException {
+        DefaultMQProducer producer = new DefaultMQProducer("geek-retry-retryAsyncProducer");
         producer.setNamesrvAddr(mqUrl);
         // 指定异步发送失败后不进行重试发送
         producer.setRetryTimesWhenSendAsyncFailed(0);
         // 指定新创建的Topic的Queue数量为2，默认为4
         producer.setDefaultTopicQueueNums(2);
         producer.start();
-        for (int i = 0; i < 100; i++) {
-            byte[] body = ("Hi," + i).getBytes();
+        for (int i = 0; i < 10; i++) {
+            String msg = "重试异步消息发送，生产者发送消息：" + i;
+            byte[] body = msg.getBytes();
             try {
-                Message msg = new Message("myTopicA", "myTag", body);
+                Message message = new Message("geek-retry-topic", "retryAsyncProducer", body);
                 // 异步发送。指定回调
-                producer.send(msg, new SendCallback() {
+                producer.send(message, new SendCallback() {
                     // 当producer接收到MQ发送来的ACK后就会触发该回调方法的执行
                     @Override
                     public void onSuccess(SendResult sendResult) {
                         System.out.println(sendResult);
                     }
+
                     @Override
                     public void onException(Throwable e) {
                         e.printStackTrace();
